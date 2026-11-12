@@ -1,2 +1,12 @@
-html, body { direction: rtl; background: #FAF5EE; }
-body { padding: 24px; font-family: "IBM Plex Sans Hebrew", Arial, sans-serif; line-height: 1.8; }
+html, body { direction: rtl; margin: 0; }
+.pv { min-height: 100vh; }
+.pv .pv-section { display: block !important; padding-top: 2rem; }
+.pv .pv-one { columns: 1 !important; display: block; max-width: 520px; }
+.pv .pv-note { color: #8a7a6a; font-size: .9rem; margin: 0 0 1rem; }
+.pv .pv-empty { aspect-ratio: 3/4; background: #eee3d6; border-radius: 16px; display: grid; place-items: center; color: #8a7a6a; }
+.pv .hero-card { position: relative; }
+.pv .pv-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.pv .hero-card > *:not(.pv-hero-img) { position: relative; z-index: 1; }
+.pv .post-hero { min-height: 360px; }
+.pv a { pointer-events: none; }
+.pv .pv-one { margin-left: auto; margin-right: 0; }

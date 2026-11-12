@@ -129,7 +129,6 @@ collections:
 
   - name: settings
     label: טקסטים בדפים
-    editor: { preview: false }
     files:
       - name: site
         label: דף הבית, אודות וטלפון
