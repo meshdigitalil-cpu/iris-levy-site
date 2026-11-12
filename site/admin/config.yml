@@ -1,0 +1,153 @@
+# הגדרות פאנל הניהול (Decap CMS)
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "חדש: {{collection}} – {{slug}}"
+    update: "עדכון: {{collection}} – {{slug}}"
+    delete: "מחיקה: {{collection}} – {{slug}}"
+    uploadMedia: "העלאת תמונה {{path}}"
+    deleteMedia: "מחיקת תמונה {{path}}"
+
+locale: he
+site_url: https://www.iris-levy.co.il
+display_url: https://www.iris-levy.co.il
+logo_url: /apple-touch-icon.png
+publish_mode: simple
+slug:
+  encoding: unicode
+  clean_accents: false
+  sanitize_replacement: "-"
+media_folder: site/media/uploads
+public_folder: /media/uploads
+
+collections:
+  - name: articles
+    label: מאמרים
+    label_singular: מאמר
+    description: "כל המאמרים באתר. לחצי על מאמר כדי לתקן אותו, או על \"מאמר חדש\" כדי להוסיף."
+    folder: content/articles
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: "פנים", field: tag, pattern: "^פנים$" }
+      - { label: "גב", field: tag, pattern: "^גב$" }
+      - { label: "ישבן", field: tag, pattern: "^ישבן$" }
+      - { label: "קרטוזיס פילאריס", field: tag, pattern: "^קרטוזיס$" }
+      - { label: "צלקות", field: tag, pattern: "^צלקות$" }
+      - { label: "הורמונלי", field: tag, pattern: "^הורמונלי$" }
+      - { label: "מבוגרים", field: tag, pattern: "^מבוגרים$" }
+      - { label: "סבוריאה", field: tag, pattern: "^סבוריאה$" }
+      - { label: "הידרדניטיס", field: tag, pattern: "^הידרדניטיס$" }
+    fields:
+      - { label: "כותרת המאמר", name: title, widget: string }
+      - label: "נושא"
+        name: tag
+        widget: select
+        options:
+          - { label: "פנים", value: "פנים" }
+          - { label: "גב", value: "גב" }
+          - { label: "ישבן", value: "ישבן" }
+          - { label: "קרטוזיס פילאריס", value: "קרטוזיס" }
+          - { label: "צלקות", value: "צלקות" }
+          - { label: "הורמונלי", value: "הורמונלי" }
+          - { label: "מבוגרים", value: "מבוגרים" }
+          - { label: "סבוריאה", value: "סבוריאה" }
+          - { label: "הידרדניטיס", value: "הידרדניטיס" }
+      - { label: "תאריך", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, default: "{{now}}", required: false }
+      - { label: "תמונה ראשית – אם ריק תופיע התמונה של הנושא", name: image, widget: image, required: false, choose_url: false }
+      - { label: "תקציר קצר – מופיע ברשימת המאמרים", name: excerpt, widget: text, required: false }
+      - label: "תוכן המאמר"
+        name: body
+        widget: markdown
+        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list, quote]
+        editor_components: [image]
+        modes: [rich_text]
+      - { label: "טיוטה (לא יופיע באתר עד שמבטלים את הסימון)", name: draft, widget: boolean, default: false, required: false }
+      - { label: "כתובת המאמר (נוצרת לבד. במאמר קיים לא לשנות)", name: slug, widget: string, required: false }
+      - { name: id, widget: hidden, required: false }
+      - { name: views, widget: hidden, required: false }
+      - { name: minutes, widget: hidden, required: false }
+      - { name: order, widget: hidden, required: false }
+      - { label: "כותרת לגוגל", name: page_title, widget: string, required: false }
+      - { label: "תיאור לגוגל", name: description, widget: text, required: false }
+
+  - name: reviews
+    label: המלצות
+    label_singular: המלצה
+    description: "המלצות של מטופלים ומטופלות. המלצה חדשה תופיע ראשונה באתר."
+    folder: content/reviews
+    create: true
+    delete: true
+    slug: "r-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    identifier_field: name
+    summary: "{{name}}"
+    sortable_fields: [date, name]
+    fields:
+      - { label: "שם הממליץ/ה (למשל: נועה, בת 24)", name: name, widget: string }
+      - { label: "ההמלצה", name: body, widget: text }
+      - label: "נושא"
+        name: tag
+        widget: select
+        required: false
+        options:
+          - { label: "פנים", value: "פנים" }
+          - { label: "גב", value: "גב" }
+          - { label: "ישבן", value: "ישבן" }
+          - { label: "קרטוזיס פילאריס", value: "קרטוזיס" }
+          - { label: "צלקות", value: "צלקות" }
+          - { label: "הורמונלי", value: "הורמונלי" }
+          - { label: "מבוגרים", value: "מבוגרים" }
+          - { label: "סבוריאה", value: "סבוריאה" }
+          - { label: "הידרדניטיס", value: "הידרדניטיס" }
+      - { label: "תאריך", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, picker_utc: true, default: "{{now}}", required: false }
+      - { label: "להציג בהמלצות המתחלפות בדף הבית", name: featured, widget: boolean, default: false, required: false }
+      - { name: order, widget: hidden, required: false }
+
+  - name: before-after
+    label: לפני ואחרי
+    label_singular: תמונת לפני ואחרי
+    description: "זוגות תמונות לפני ואחרי. מסמנים \"בדף הבית\" כדי שיופיעו גם בדף הבית (עד 3)."
+    folder: content/before-after
+    create: true
+    delete: true
+    slug: "ba-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [order, title]
+    fields:
+      - { label: "כיתוב (למשל: מקרה 27)", name: title, widget: string }
+      - { label: "תמונת לפני", name: before, widget: image, choose_url: false }
+      - { label: "תמונת אחרי", name: after, widget: image, required: false, choose_url: false }
+      - { label: "מיקום בגלריה (מספר קטן = מופיע קודם)", name: order, widget: number, value_type: int, required: false }
+      - { label: "להציג בדף הבית", name: home, widget: boolean, default: false, required: false }
+      - { label: "מיקום בדף הבית (1-3)", name: home_order, widget: number, value_type: int, required: false, min: 1, max: 3 }
+
+  - name: settings
+    label: טקסטים בדפים
+    editor: { preview: false }
+    files:
+      - name: site
+        label: דף הבית, אודות וטלפון
+        file: content/settings/site.json
+        fields:
+          - { label: "כותרת ראשית בדף הבית", name: hero_title, widget: string }
+          - { label: "פסקה מתחת לכותרת", name: hero_text, widget: text }
+          - { label: "שורה מודגשת מתחת לפסקה", name: hero_free, widget: string }
+          - { label: "שנות ניסיון", name: years, widget: string }
+          - { label: "כותרת \"נעים להכיר\"", name: about_title, widget: string }
+          - { label: "משפט פתיחה באודות", name: about_lead, widget: text }
+          - { label: "ציטוט", name: about_quote, widget: text }
+          - label: "נקודות באודות"
+            name: about_list
+            widget: list
+            collapsed: false
+            add_to_top: false
+            field: { label: "נקודה", name: item, widget: text }
+          - { label: "למי הטיפולים", name: about_who, widget: string }
+          - { label: "תמונה באודות", name: about_image, widget: image, choose_url: false }
+          - { label: "טלפון (משתנה בכל האתר, כולל וואטסאפ)", name: phone, widget: string }

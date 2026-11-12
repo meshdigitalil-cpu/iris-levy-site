@@ -1,0 +1,6 @@
+/* התאמה לעברית: כיוון מימין לשמאל בשדות הטקסט ובעורך */
+body { font-family: "Assistant", "Segoe UI", Arial, sans-serif; }
+input, textarea, [data-slate-editor], [contenteditable="true"] { direction: rtl; text-align: right; }
+[data-slate-editor] p, [data-slate-editor] li, [data-slate-editor] h2, [data-slate-editor] h3 { direction: rtl; text-align: right; }
+/* כרטיסים ברשימה – יישור לימין */
+main a h2, main li a h2 { direction: rtl; text-align: right; }

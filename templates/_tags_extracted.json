@@ -1,0 +1,48 @@
+{
+ "tags": {
+  "צלקות": {
+   "color": "#6B5646",
+   "image": "/media/33ea2e3eda.jpg",
+   "label": "צלקות"
+  },
+  "מבוגרים": {
+   "color": "#4E6B3C",
+   "image": "/media/30bc3fdc89.jpg",
+   "label": "מבוגרים"
+  },
+  "פנים": {
+   "color": "#E8833A",
+   "image": "/media/2ecc5ae874.jpg",
+   "label": "פנים"
+  },
+  "גב": {
+   "color": "#5E7348",
+   "image": "/media/766f42e072.jpg",
+   "label": "גב"
+  },
+  "הורמונלי": {
+   "color": "#C9631F",
+   "image": "/media/3fad2ee297.jpg",
+   "label": "הורמונלי"
+  },
+  "קרטוזיס": {
+   "color": "#8A6A4F",
+   "image": "/media/dff8a23f6d.jpg",
+   "label": "קרטוזיס פילאריס"
+  },
+  "סבוריאה": {
+   "color": "#A0522D",
+   "image": "/media/17c11702ec.jpg",
+   "label": "סבוריאה"
+  }
+ },
+ "cimgs": {
+  "פנים": "/media/2ecc5ae874.jpg",
+  "גב": "/media/766f42e072.jpg",
+  "קרטוזיס": "/media/dff8a23f6d.jpg",
+  "צלקות": "/media/33ea2e3eda.jpg",
+  "הורמונלי": "/media/3fad2ee297.jpg",
+  "מבוגרים": "/media/30bc3fdc89.jpg",
+  "סבוריאה": "/media/17c11702ec.jpg"
+ }
+}

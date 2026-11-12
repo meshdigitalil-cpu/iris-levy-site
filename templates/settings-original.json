@@ -1,0 +1,74 @@
+{
+ "fields": {
+  "hero_title": {
+   "before": "<h1><span class=\"sr-h\">איריס לוי, </span>",
+   "html": "מומחית לטיפול ושיקום בעיות עור",
+   "after": "</h1>",
+   "type": "text"
+  },
+  "hero_text": {
+   "before": "</h1>\n      <p>",
+   "html": "אבחון מדויק וטיפול אישי באקנה בפנים, אקנה בישבן, קרטוזיס פילאריס, הידרדניטיס סופורטיבה, סבוריאה, כתמים וצלקות. איריס מטפלת בעצמה בכל מטופל ומטופלת.",
+   "after": "</p>\n      <span class=\"free\">",
+   "type": "text"
+  },
+  "hero_free": {
+   "before": "<span class=\"free\">",
+   "html": "✓ פגישת אבחון וייעוץ ללא עלות",
+   "after": "</span><div class=\"hero-acts\">",
+   "type": "text"
+  },
+  "years": {
+   "before": "<span class=\"cnt\" data-to=\"",
+   "html": "25",
+   "after": "\">",
+   "type": "text"
+  },
+  "about_image": {
+   "before": "<figure class=\"meet-img\"><img src=\"",
+   "html": "/media/835febb938.jpg",
+   "after": "\" alt=\"איריס לוי בקליניקה שלה\">",
+   "type": "image"
+  },
+  "about_title": {
+   "before": "<div class=\"meet-txt\">\n    <h2>",
+   "html": "נעים להכיר, איריס",
+   "after": "</h2>",
+   "type": "text"
+  },
+  "about_lead": {
+   "before": "<p class=\"lead\">",
+   "html": "קוסמטיקאית פרא-רפואית עם תעודות מורשות, מומחית לבעיות עור קשות מעל 25 שנה.",
+   "after": "</p>\n    <blockquote class=\"mq\">",
+   "type": "text"
+  },
+  "about_quote": {
+   "before": "<blockquote class=\"mq\">”",
+   "html": "לא מהיר, אך יעיל ומועיל. לא מהפכני, אך ייחודי ומקצועי.",
+   "after": "“</blockquote>",
+   "type": "text"
+  },
+  "about_list": {
+   "before": "<ul class=\"meet-list\">",
+   "html": "\n      <li>כל הטיפולים מבוצעים על ידי בלבד, באופן אישי ובלעדי ובדיסקרטיות מלאה, ללא מעורבות של מטפלות אחרות.</li>\n      <li>הטיפול עובד ופועל על שורש הבעיה, על הגורם לבעיה, עם מגע יד שלי בלבד.</li>\n      <li>ללא תרופות. ללא שינוי אורח החיים שלך. וללא בדיקות דם.</li>\n      <li>בדיסקרטיות וברגישות, באווירה סטרילית ומקצועית.</li>\n    ",
+   "after": "</ul>",
+   "type": "list"
+  },
+  "about_who": {
+   "before": "<p class=\"meet-who\">",
+   "html": "בנשים, בגברים ובני נוער בגיל ההתבגרות",
+   "after": "</p>",
+   "type": "text"
+  },
+  "years_text": {
+   "before": "data-to=\"25\">",
+   "html": "25",
+   "after": "</span>+</b>",
+   "type": "text",
+   "mirror": "years"
+  }
+ },
+ "phone": "0558833337",
+ "phone_intl": "972558833337",
+ "phone_dash": "055-8833337"
+}
