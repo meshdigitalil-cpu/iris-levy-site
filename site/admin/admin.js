@@ -105,3 +105,33 @@ CMS.registerPreviewTemplate('articles', ArticlePreview);
 CMS.registerPreviewTemplate('reviews', ReviewPreview);
 CMS.registerPreviewTemplate('before-after', BAPreview);
 CMS.registerPreviewTemplate('site', HomePreview);
+
+// ---------- כפתור "החלפת סיסמה" בפינת הפאנל ----------
+(function () {
+  function addBtn() {
+    if (document.getElementById('pw-btn') || !window.netlifyIdentity || !netlifyIdentity.currentUser()) return;
+    var b = document.createElement('button');
+    b.id = 'pw-btn'; b.type = 'button'; b.textContent = 'החלפת סיסמה';
+    b.onclick = openBox;
+    document.body.appendChild(b);
+  }
+  function openBox() {
+    var o = document.createElement('div'); o.id = 'pw-box';
+    o.innerHTML = '<form dir="rtl"><h3>החלפת סיסמה</h3>' +
+      '<label>סיסמה חדשה<input type="password" name="a" minlength="8" required autocomplete="new-password"></label>' +
+      '<label>שוב את הסיסמה החדשה<input type="password" name="b" minlength="8" required autocomplete="new-password"></label>' +
+      '<p class="pw-msg"></p><div class="pw-row"><button type="submit">שמירה</button><button type="button" class="pw-x">ביטול</button></div></form>';
+    document.body.appendChild(o);
+    var f = o.querySelector('form'), m = o.querySelector('.pw-msg');
+    o.querySelector('.pw-x').onclick = function () { o.remove(); };
+    f.onsubmit = function (e) {
+      e.preventDefault();
+      if (f.a.value !== f.b.value) { m.textContent = 'שתי הסיסמאות לא זהות.'; return; }
+      m.textContent = 'שומרת...';
+      netlifyIdentity.currentUser().update({ password: f.a.value }).then(function () {
+        m.textContent = 'הסיסמה הוחלפה בהצלחה ✓'; setTimeout(function () { o.remove(); }, 1500);
+      }).catch(function () { m.textContent = 'משהו לא הצליח. נסי שוב.'; });
+    };
+  }
+  setInterval(addBtn, 1500);
+})();

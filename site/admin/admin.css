@@ -4,3 +4,13 @@ input, textarea, [data-slate-editor], [contenteditable="true"] { direction: rtl;
 [data-slate-editor] p, [data-slate-editor] li, [data-slate-editor] h2, [data-slate-editor] h3 { direction: rtl; text-align: right; }
 /* כרטיסים ברשימה – יישור לימין */
 main a h2, main li a h2 { direction: rtl; text-align: right; }
+#pw-btn { position: fixed; bottom: 16px; left: 16px; z-index: 9999; background: #2A1D14; color: #fff; border: 0; border-radius: 999px; padding: 10px 18px; font: 600 14px "Segoe UI", Arial, sans-serif; cursor: pointer; }
+#pw-box { position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,.45); display: grid; place-items: center; }
+#pw-box form { background: #fff; border-radius: 16px; padding: 24px; width: min(360px, 92vw); font-family: "Segoe UI", Arial, sans-serif; text-align: right; }
+#pw-box h3 { margin: 0 0 12px; }
+#pw-box label { display: block; margin: 10px 0; font-size: 14px; }
+#pw-box input { display: block; width: 100%; box-sizing: border-box; margin-top: 4px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; }
+#pw-box .pw-msg { min-height: 1.2em; color: #C9631F; font-size: 14px; }
+#pw-box .pw-row { display: flex; gap: 8px; }
+#pw-box .pw-row button { flex: 1; padding: 10px; border-radius: 8px; border: 0; cursor: pointer; font-size: 15px; }
+#pw-box button[type=submit] { background: #E8833A; color: #fff; }
