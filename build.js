@@ -75,7 +75,8 @@ arts = sortByOrder(arts, 'date');
 let nextNum = 1 + Math.max(0, ...arts.map(a => (/^a(\d+)$/.exec(a.id || '') || [])[1] || 0).map(Number));
 const usedSlugs = new Set();
 for (const a of arts) {
-  if (!a.id) a.id = 'a' + (nextNum++);
+  if (!a.id) { if (a.number && !arts.some(x => x !== a && x.id === 'a' + a.number)) a.id = 'a' + a.number; else a.id = 'a' + (nextNum++); }
+  if (!a.number) { const m = /^a(\d+)$/.exec(a.id); if (m) a.number = Number(m[1]); }
   if (!a.slug) a.slug = /^[a-z]?\d+$/.test(a.file) ? slugify(a.title) : a.file;
   let s = a.slug, k = 2;
   while (usedSlugs.has(s.toLowerCase())) s = a.slug + '-' + (k++);
@@ -137,7 +138,7 @@ function splitBlocks(html) {
   const rest = html.slice(start).trim(); if (rest) out.push(rest);
   return out.filter(Boolean);
 }
-const anum = a => { const m = /^a(\d+)$/.exec(a.id); return m ? m[1] : (a.views ? String(a.views) : ''); };
+const anum = a => { if (a.number) return String(a.number); const m = /^a(\d+)$/.exec(a.id); return m ? m[1] : (a.views ? String(a.views) : ''); };
 const fmtDate = d => { const [y, mo] = d.split('-'); return MONTHS[Number(mo) - 1] + ' ' + y; };
 
 for (const a of arts) {

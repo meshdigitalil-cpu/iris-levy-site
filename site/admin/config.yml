@@ -31,8 +31,8 @@ collections:
     delete: true
     slug: "{{slug}}"
     identifier_field: title
-    summary: "{{title}}"
-    sortable_fields: [date, title]
+    summary: "{{number}} · {{title}}"
+    sortable_fields: [number, date, title]
     view_filters:
       - { label: "פנים", field: tag, pattern: "^פנים$" }
       - { label: "גב", field: tag, pattern: "^גב$" }
@@ -45,6 +45,7 @@ collections:
       - { label: "הידרדניטיס", field: tag, pattern: "^הידרדניטיס$" }
     fields:
       - { label: "כותרת המאמר", name: title, widget: string }
+      - { label: "מספר מאמר (נוצר לבד במאמר חדש)", name: number, widget: number, value_type: int, required: false }
       - label: "נושא"
         name: tag
         widget: select
