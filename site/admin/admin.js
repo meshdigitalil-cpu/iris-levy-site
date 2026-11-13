@@ -135,3 +135,25 @@ CMS.registerPreviewTemplate('site', HomePreview);
   }
   setInterval(addBtn, 1500);
 })();
+
+// ---------- שמות ברורים לכפתורי השמירה ----------
+(function () {
+  var MAP = {
+    'פרסום': 'שמירה',
+    'פורסם': 'שמור ✓',
+    'פרסום מיידי': 'שמירה ועדכון באתר',
+    'פרסום ויצירת אייטם חדש': 'שמירה ופתיחת חדש',
+    'פרסום ושכפול': 'שמירה ושכפול',
+    'מפרסם...': 'שומרת...'
+  };
+  function fix(root) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())) {
+      var t = n.nodeValue.trim();
+      if (MAP[t] && n.nodeValue !== MAP[t]) n.nodeValue = MAP[t];
+    }
+  }
+  new MutationObserver(function () { fix(document.body); })
+    .observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+})();
