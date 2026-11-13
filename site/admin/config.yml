@@ -45,7 +45,7 @@ collections:
       - { label: "הידרדניטיס", field: tag, pattern: "^הידרדניטיס$" }
     fields:
       - { label: "כותרת המאמר", name: title, widget: string }
-      - { label: "מספר מאמר", name: number, widget: number, value_type: int, required: false, hint: "במאמר חדש המספר נוצר לבד" }
+      - { label: "מספר מאמר", name: number, widget: hidden, required: false }
       - label: "נושא"
         name: tag
         widget: select

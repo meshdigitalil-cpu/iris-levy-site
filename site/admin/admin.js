@@ -160,3 +160,31 @@ CMS.registerPreviewTemplate('site', HomePreview);
   new MutationObserver(function () { fix(document.body); })
     .observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 })();
+
+// ---------- מספר למאמר חדש: נקבע לבד לפי המספר הפנוי הבא ----------
+(function () {
+  function nextNumber() {
+    return fetch('/?n=' + Date.now()).then(function (r) { return r.text(); }).then(function (s) {
+      var i = s.indexOf('window.IRIS='), j = s.indexOf(';window.IRISB', i);
+      var max = 0;
+      if (i >= 0 && j > i) {
+        var D = JSON.parse(s.slice(i + 12, j));
+        D.arts.forEach(function (a) {
+          var m = /^a(\d+)$/.exec(a.id); if (m) max = Math.max(max, Number(m[1]));
+          if (a.v) max = Math.max(max, Number(a.v) || 0);
+        });
+      }
+      return max + 1;
+    });
+  }
+  CMS.registerEventListener({
+    name: 'preSave',
+    handler: function (ev) {
+      var entry = ev.entry;
+      if (entry.get('collection') !== 'articles') return;
+      var data = entry.get('data');
+      if (data.get('number')) return;
+      return nextNumber().then(function (n) { return data.set('number', n); });
+    }
+  });
+})();
