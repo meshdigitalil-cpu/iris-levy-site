@@ -12,6 +12,7 @@ const DOMAIN = 'https://www.iris-levy.co.il';
 const TAGS = JSON.parse(fs.readFileSync(path.join(ROOT, 'templates', 'tags.json'), 'utf8'));
 const TAG = Object.fromEntries(TAGS.map(t => [t.tag, t]));
 const ART_TPL = fs.readFileSync(path.join(ROOT, 'templates', 'article.html'), 'utf8');
+const QUIZ_JS = fs.readFileSync(path.join(ROOT, 'templates', 'quiz.html'), 'utf8');
 const MONTHS = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
 
 // ---------- עזרים ----------
@@ -102,6 +103,7 @@ copyDir(SITE, DIST);
 
 // ---------- עמודי מאמרים ----------
 const QUIZ = topic => `<div class="qz-inline" data-topic="${esc(topic)}"><span class="qz-kick">שאלון קצר</span><h2 style="margin:0 0 .4rem">רוצה לדעת אם זה מתאים לך?</h2><p style="margin:0 0 1rem">ארבע שאלות קצרות, ואיריס תחזור אלייך לתיאום פגישת אבחון וייעוץ חינם.</p><div aria-hidden="true" class="qz-dots"><i></i><i></i><i></i><i></i><i></i></div><div aria-live="polite" class="qz-body"></div></div>`;
+const QUIZ_TOPIC = { 'פנים': 'אקנה ופצעי בגרות בפנים', 'גב': 'אקנה בגב ובכתפיים', 'קרטוזיס': 'קרטוזיס פילאריס', 'סבוריאה': 'סבוריאה, דרמטיטיס ועור שומני', 'הורמונלי': 'אקנה הורמונלי', 'מבוגרים': 'אקנה בגיל מבוגר', 'צלקות': 'כתמים, צלקות וחטטים' };
 const PHONE_WA = '972558833337';
 const encQ = s => encodeURIComponent(s).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase());
 const waArt = t => `https://wa.me/${PHONE_WA}?text=` + encQ(`היי איריס, קראתי באתר את המאמר "${t}" ואשמח לתאם פגישת אבחון וייעוץ`);
@@ -109,7 +111,8 @@ const CTA = (t, extra) => `<div class="midcta${extra || ''}"><div><b>רוצה ל
 
 marked.setOptions({ gfm: true, breaks: false });
 function renderBody(a) {
-  let md = a.body.replace(/\[\[שאלון:(.*?)\]\]/g, (m, t) => `\n\n<!--QUIZ:${t}-->\n\n`);
+  // השאלון תמיד בתחילת המאמר (אחרי הפסקה הראשונה), עם הנושא לפי הקטגוריה
+  let md = a.body.replace(/\[\[שאלון:(.*?)\]\]/g, '');
   let html = marked.parse(md);
   // הדגשות שה-Markdown לא זיהה (בעברית ליד פיסוק)
   html = html.replace(/\*\*([^\n]+?)\*\*/g, '<strong>$1</strong>');
@@ -123,6 +126,7 @@ function renderBody(a) {
   const blocks = splitBlocks(html);
   const pos = Math.floor(blocks.length * 0.4);
   blocks.splice(pos, 0, CTA(a.title));
+  blocks.splice(Math.min(1, blocks.length), 0, QUIZ(QUIZ_TOPIC[a.tag] || ''));
   return { html: blocks.join('\n'), heads };
 }
 function splitBlocks(html) {
@@ -173,7 +177,8 @@ for (const a of arts) {
     .split('{{description}}').join(esc(a.description))
     .split('{{canonical}}').join(canonical)
     .split('{{jsonld}}').join(JSON.stringify(ld).replace(/</g, '\\u003c'))
-    .split('{{main}}').join(main);
+    .split('{{main}}').join(main)
+    .replace('</body>', QUIZ_JS + '</body>');
   fs.writeFileSync(path.join(DIST, 'מאמרים', a.slug.toLowerCase() + '.html'), page);
 }
 
