@@ -762,3 +762,7 @@ blockquote,.quote,.tq{font-size:1.5rem!important;line-height:1.3!important}
 .ga-text .qz-inline{margin:2.2rem 0;max-width:none}.ga-text .qz-inline h3{font-family:inherit}
 
 .amore[hidden]{display:none!important}
+
+/* המלצה קופצת – גרסה קטנה יותר */
+@media (min-width:601px){.rpop{width:270px;padding:.85rem .95rem .75rem;border-radius:16px}.rpop::before{font-size:.72rem;top:-.75rem}.rpop .rp-h{font-size:.9rem;margin-top:.1rem}.rpop .rp-t{font-size:.86rem;line-height:1.45}.rpop .rp-a{font-size:.78rem;margin-top:.3rem}.rpop .rp-x{width:26px;height:26px}}
+@media (max-width:600px){.rpop{padding:.65rem .75rem .6rem;width:calc(100% - 8rem)}.rpop .rp-h{font-size:.85rem}.rpop .rp-t{font-size:.82rem;line-height:1.4}.rpop .rp-a{font-size:.75rem;margin-top:.25rem}.rpop .rp-x{width:26px;height:26px}}

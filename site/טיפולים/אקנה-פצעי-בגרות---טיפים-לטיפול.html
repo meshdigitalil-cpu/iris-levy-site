@@ -43,7 +43,7 @@
       <div class="ga-text"><p>את/ה סובל/ת  מאקנה פצעי בגרות? בגיל ההתבגרות?  </p>
 <ul>
 <li>פצעים פצעונים, מוגלתיים ודלקתיים, הנלווים להם, שחורים - שומנים - שומן תת-עורי, קומודונים פנימיים וחיצוניים, עליהם מתקיימים חיידקי האקנה, P.Acne... </li>
-</ul>
+</ul><div class="qz-inline" data-topic="אקנה ופצעי בגרות בפנים"><span class="qz-kick">שאלון קצר</span><h2 style="margin:0 0 .4rem">רוצה לדעת אם זה מתאים לך?</h2><p style="margin:0 0 1rem">ארבע שאלות קצרות, ואיריס תחזור אלייך לתיאום פגישת אבחון וייעוץ חינם.</p><div aria-hidden="true" class="qz-dots"><i></i><i></i><i></i><i></i><i></i></div><div aria-live="polite" class="qz-body"></div></div>
 <p>לעיתים עם התפרצות, ציסטות ומורסות, עמוקות - נפוחות וכואבות, הגורמים, לכתמים, כתמי פוסט אקנה חומים - אדומים, לעיתים כהים יותר, לצלקות, צלקות פוסט אקנה, חטטים וסימנים על הפנים שלך, עם נטייה להתפשט לאיזור החזה, הגב, הישבן והמפשעות בנשים..</p>
 <p>נקבוביות מורחבות, עור פנים שומני, אפרורי. כל אלה הם הביטוי הראשוני של מחלת האקנה  באזור הפנים, הגב, והישבן - חזזית או חטטת בעברית. </p>
 <ul>
@@ -347,5 +347,24 @@ document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target
   setTimeout(findAndShow,300);
 })();
 </script>
+<script>(function(){var SEL='.qz-inline';var box=document.querySelector(SEL);if(!box)return;var TOPIC=box.dataset.topic;
+var Q=[{t:'מה הכי קרוב למה שאת/ה חווה?',o:["אקנה ופצעי בגרות בפנים", "אקנה בגב ובכתפיים", "קרטוזיס פילאריס", "סבוריאה, דרמטיטיס ועור שומני", "אקנה הורמונלי", "אקנה בגיל מבוגר", "כתמים, צלקות וחטטים"]},{t:'בן/ת כמה את/ה?',n:1},{t:'האם עברת/ה בעבר טיפול רפואי (כדורים) או קוסמטי?',o:['כן, טיפול רפואי (כדורים)','כן, טיפול קוסמטי','גם וגם','לא']},{t:'באיזה אזור בגוף את/ה סובל/ת?',o:['פנים','גב וכתפיים','חזה','ישבן','זרועות','רגליים','אחר'],m:1}];
+var N=Q.length,A=[Q[0].o.indexOf(TOPIC)>-1?TOPIC:null,null,null,[]],st=0,body=box.querySelector('.qz-body');
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function has(k){return Q[k].m?A[k].length>0:!!A[k]}
+function render(focus){[].forEach.call(box.querySelectorAll('.qz-dots i'),function(x,k){x.classList.toggle('on',k<=st)});
+var nav='<div class="qz-nav">'+(st>0?'<button class="back" type="button">חזרה</button>':'<span></span>')+(st<N?'<button class="next" type="button"'+(has(st)?'':' disabled')+'>'+(st<N-1?'המשך':'לסיכום')+'</button>':'<span></span>')+'</div>';
+if(st<N){var q=Q[st],h='<h3>'+esc(q.t)+'</h3>';
+if(q.n){h+='<div class="qz-opts"><label class="qz-age"><span class="sr">גיל</span><input type="number" inputmode="numeric" min="1" max="120" value="'+esc(A[st]||'')+'" placeholder="גיל"></label></div>'}
+else{h+=(q.m?'<p class="qz-note" style="text-align:right;margin:-.5rem 0 .8rem">אפשר לבחור יותר מאזור אחד</p>':'')+'<div class="qz-opts">';q.o.forEach(function(o,k){var on=q.m?A[st].indexOf(o)>-1:A[st]===o;h+='<button type="button" aria-pressed="'+on+'" data-k="'+k+'">'+esc(o)+'</button>'});h+='</div>'}
+body.innerHTML=h+nav;var inp=body.querySelector('.qz-age input');if(inp){inp.addEventListener('input',function(){var v=parseInt(inp.value,10);A[st]=(v>0&&v<121)?String(v):null;body.querySelector('.next').disabled=!A[st]});inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&A[st]){st++;render(1)}})}}
+else{var rows=[['מה מטריד אותי',A[0]],['גיל',A[1]],['טיפול קודם',A[2]],['אזור בגוף',A[3].join(', ')]];
+var msg='היי איריס, הגעתי מהאתר. אשמח לתאם פגישת אבחון וייעוץ חינם.\n'+rows.map(function(r){return r[0]+': '+r[1]}).join('\n');
+body.innerHTML='<h3>תודה! זה מה שאיריס תקבל:</h3><p class="qz-sum">'+rows.map(function(r){return '<b>'+r[0]+':</b> '+esc(r[1])}).join('<br>')+'</p><a class="qz-send" target="_blank" rel="noopener" href="https://wa.me/972558833337?text='+encodeURIComponent(msg)+'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 01-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1120.5 11.6z"/></svg>שליחה לאיריס בוואטסאפ</a><p class="qz-note">איריס תחזור אלייך לתיאום פגישת אבחון וייעוץ חינם.</p>'+nav}
+if(focus){var f=body.querySelector('.qz-age input,.qz-opts button,.qz-send');if(f)f.focus({preventScroll:true})}}
+body.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+if(b.dataset.k!=null){var q=Q[st],o=q.o[+b.dataset.k];if(q.m){var i=A[st].indexOf(o);i>-1?A[st].splice(i,1):A[st].push(o);render(1)}else{A[st]=o;st++;render(1)}return}
+if(b.classList.contains('next')){if(has(st)){st++;render(1)}}else if(b.classList.contains('back')){st--;render(1)}});
+render(0);})();</script>
 </body>
 </html>
