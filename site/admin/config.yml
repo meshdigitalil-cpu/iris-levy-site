@@ -43,6 +43,7 @@ collections:
       - { label: "מבוגרים", field: tag, pattern: "^מבוגרים$" }
       - { label: "סבוריאה", field: tag, pattern: "^סבוריאה$" }
       - { label: "הידרדניטיס", field: tag, pattern: "^הידרדניטיס$" }
+      - { label: "עמודי טיפולים", field: section, pattern: "טיפולים" }
     fields:
       - { label: "כותרת המאמר", name: title, widget: string }
       - { label: "מספר מאמר", name: number, widget: hidden, required: false }
@@ -73,6 +74,7 @@ collections:
       - { name: id, widget: hidden, required: false }
       - { name: views, widget: hidden, required: false }
       - { name: minutes, widget: hidden, required: false }
+      - { name: section, widget: hidden, required: false }
       - { name: order, widget: hidden, required: false }
       - { label: "כותרת לגוגל", name: page_title, widget: string, required: false }
       - { label: "תיאור לגוגל", name: description, widget: text, required: false }

@@ -83,7 +83,7 @@ for (const a of arts) {
   while (usedSlugs.has(s.toLowerCase())) s = a.slug + '-' + (k++);
   a.slug = s; usedSlugs.add(s.toLowerCase());
   a.date = ymd(a.date) || new Date().toISOString().slice(0, 10);
-  a.url = '/מאמרים/' + a.slug;
+  a.url = (a.section === 'טיפולים' ? '/טיפולים/' : '/מאמרים/') + a.slug;
   if (!a.description) a.description = (a.excerpt || '').slice(0, 155);
   if (!a.page_title) a.page_title = a.title + ' | איריס לוי';
   if (!a.excerpt) a.excerpt = a.body.replace(/[#*_>\[\]()-]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160);
@@ -158,7 +158,7 @@ for (const a of arts) {
   const main = `<main id="top" class="art-page">
 <section class="view" id="v-art" data-id="${esc(a.id)}">
   <div class="prog" aria-hidden="true"><i></i></div>
-  <header class="post-hero ga-hero" style="--c:${tg.color}">${img ? `<img class="ga-bg" alt="" src="${esc(img)}">` : ''}<div class="wrap"><a class="back" href="/מאמרים">→ לכל המאמרים</a><span class="chip ga-tag">${escText(a.tag)}</span><h1 class="ga-t">${escText(a.title)}</h1><div class="meta">${meta}</div></div></header>
+  <header class="post-hero ga-hero" style="--c:${tg.color}">${img ? `<img class="ga-bg" alt="" src="${esc(img)}">` : ''}<div class="wrap">${a.section === 'טיפולים' ? '<a class="back" href="/טיפולים">→ לכל הטיפולים</a><span class="chip ga-tag">טיפולים</span>' : `<a class="back" href="/מאמרים">→ לכל המאמרים</a><span class="chip ga-tag">${escText(a.tag)}</span>`}<h1 class="ga-t">${escText(a.title)}</h1><div class="meta">${meta}</div></div></header>
   <div class="wrap post-grid${hasToc ? '' : ' notoc'}">
     ${hasToc ? `<aside class="toc ga-toc" aria-label="תוכן המאמר"><b>במאמר</b>${heads.map(h => `<a href="#${h.id}">${escText(h.text)}</a>`).join('')}</aside>` : ''}
     <div class="post-body">
@@ -179,7 +179,8 @@ for (const a of arts) {
     .split('{{jsonld}}').join(JSON.stringify(ld).replace(/</g, '\\u003c'))
     .split('{{main}}').join(main)
     .replace('</body>', QUIZ_JS + '</body>');
-  fs.writeFileSync(path.join(DIST, 'מאמרים', a.slug.toLowerCase() + '.html'), page);
+  fs.mkdirSync(path.join(DIST, a.section === 'טיפולים' ? 'טיפולים' : 'מאמרים'), { recursive: true });
+  fs.writeFileSync(path.join(DIST, a.section === 'טיפולים' ? 'טיפולים' : 'מאמרים', a.slug.toLowerCase() + '.html'), page);
 }
 
 // ---------- נתוני IRIS בכל העמודים ----------
@@ -279,7 +280,8 @@ for (const f of walk(DIST)) {
   const f = path.join(DIST, 'sitemap.xml');
   let s = fs.readFileSync(f, 'utf8');
   const artPrefix = DOMAIN + encPath('/מאמרים/');
-  const lines = s.split('\n').filter(l => !l.includes('<loc>' + artPrefix));
+  const treatLocs = arts.filter(a => a.section === 'טיפולים').map(a => '<loc>' + DOMAIN + encPath(a.url));
+  const lines = s.split('\n').filter(l => !l.includes('<loc>' + artPrefix) && !treatLocs.some(t => l.toLowerCase().includes(t.toLowerCase())));
   const today = new Date().toISOString().slice(0, 10);
   const add = arts.map(a => `<url><loc>${DOMAIN + encPath(a.url)}</loc><lastmod>${a.date}</lastmod></url>`);
   const end = lines.findIndex(l => l.includes('</urlset>'));
