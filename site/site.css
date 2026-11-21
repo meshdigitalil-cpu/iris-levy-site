@@ -859,3 +859,4 @@ html body .hero-side .exp b{display:flex;justify-content:center;align-items:base
 @media (min-width:821px){html body .hero-side{margin-bottom:2.2rem}}
 html body #treat .rcx h3{font-size:clamp(1.45rem,1.9vw,1.8rem);line-height:1.05}
 @media (min-width:821px){html body .hero-pic{width:clamp(170px,15vw,230px)}}
+html body .hero-side .exp{min-width:0;width:auto;padding:.6rem 1.1rem .7rem;gap:.15rem}html body .hero-side .exp b{font-size:clamp(2.4rem,3.4vw,3rem)}html body .hero-side .exp>span{font-size:.9rem;white-space:nowrap}
