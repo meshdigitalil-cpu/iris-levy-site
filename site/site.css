@@ -803,3 +803,6 @@ html body .rpop{bottom:calc(8.4rem + var(--ckh,0px) + env(safe-area-inset-bottom
 }
 /* משפט מחץ בתמונה הראשית */
 .hero-punch{font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:600;line-height:1.45;margin:.4rem 0 .8rem;max-width:34rem}
+/* כפתור "לתיאום ייעוץ" – חום כהה */
+.pill.pill-dk{background:#4A2C1C!important;color:#fff!important;border-color:#4A2C1C!important}
+.pill.pill-dk:hover{background:#5E3A26!important}
