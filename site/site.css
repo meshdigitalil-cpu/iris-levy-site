@@ -861,3 +861,20 @@ html body #treat .rcx h3{font-size:clamp(1.45rem,1.9vw,1.8rem);line-height:1.05}
 @media (min-width:821px){html body .hero-pic{width:clamp(170px,15vw,230px)}}
 html body .hero-side .exp{min-width:0;width:auto;padding:.6rem 1.1rem .7rem;gap:.15rem}html body .hero-side .exp b{font-size:clamp(2.4rem,3.4vw,3rem)}html body .hero-side .exp>span{font-size:.9rem;white-space:nowrap}
 html body .hero-side .exp b{transform:translateX(4px)}
+/* שאלון – קטן יותר */
+html body .qz-inline{padding:1.1rem 1.1rem 1rem;border-radius:22px;margin:1.6rem 0;max-width:620px}
+html body .qz-inline h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+html body .qz-inline p{font-size:.92rem}
+html body .qz-inline h3{font-size:1.1rem;margin-bottom:.6rem}
+html body .qz-inline .qz-kick{font-size:.78rem;margin-bottom:.5rem}
+html body .qz-inline .qz-dots{margin-bottom:.7rem}
+html body .qz-inline .qz-dots i{width:22px;height:4px}
+html body .qz-inline .qz-opts{gap:.4rem}
+html body .qz-inline .qz-opts button{font-size:.92rem;padding:.6rem .85rem;border-radius:12px}
+html body .qz-inline .qz-nav{margin-top:.8rem}
+html body .qz-inline .qz-nav .next{padding:.6rem 1.2rem;font-size:.92rem}
+html body .qz-inline .qz-age input{font-size:1.05rem;padding:.6rem .85rem;border-radius:12px}
+html body .qz-inline .qz-send{font-size:.95rem;padding:.75rem}
+html body .qz-inline .qz-note{font-size:.82rem}
+@media (min-width:601px){html body .qz-inline .qz-opts{grid-template-columns:repeat(2,1fr)}}html body .qz-inline .qz-opts button{padding:.55rem .8rem!important;font-size:.9rem!important}
+html body .qz-inline h3{font-family:var(--display)!important;font-weight:700;font-size:clamp(1.35rem,2vw,1.7rem)!important;line-height:1}
