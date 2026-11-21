@@ -107,7 +107,7 @@ const QUIZ_TOPIC = { 'פנים': 'אקנה ופצעי בגרות בפנים', '�
 const PHONE_WA = '972558833337';
 const encQ = s => encodeURIComponent(s).replace(/[!'()*]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase());
 const waArt = t => `https://wa.me/${PHONE_WA}?text=` + encQ(`היי איריס, קראתי באתר את המאמר "${t}" ואשמח לתאם פגישת אבחון וייעוץ`);
-const CTA = (t, extra) => `<div class="midcta${extra || ''}"><div><b>רוצה לדעת אם זה מתאים לך?</b><p>פגישת אבחון וייעוץ ללא עלות.</p></div><a class="pill pill-wa" ${extra ? 'target="_blank" rel="noopener" href="' + waArt(t) + '"' : 'href="' + waArt(t) + '" target="_blank" rel="noopener"'}>לכתוב לאיריס בוואטסאפ</a></div>`;
+const CTA = (t, extra) => `<div class="midcta${extra || ''}"><div><b>רוצה לדעת אם זה מתאים לך?</b><p>פגישת אבחון וייעוץ ללא עלות. הפנייה דיסקרטית וללא התחייבות.</p></div><a class="pill pill-wa" ${extra ? 'target="_blank" rel="noopener" href="' + waArt(t) + '"' : 'href="' + waArt(t) + '" target="_blank" rel="noopener"'}>אני מוכנ/ה לטיפול אמיתי – חזרי אליי לתיאום אבחון</a></div>`;
 
 marked.setOptions({ gfm: true, breaks: false });
 function renderBody(a) {
