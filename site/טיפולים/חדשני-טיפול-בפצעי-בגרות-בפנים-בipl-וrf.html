@@ -456,5 +456,5 @@ body.addEventListener('click',function(e){var b=e.target.closest('button');if(!b
 if(b.dataset.k!=null){var q=Q[st],o=q.o[+b.dataset.k];if(q.m){var i=A[st].indexOf(o);i>-1?A[st].splice(i,1):A[st].push(o);render(1)}else{A[st]=o;st++;render(1)}return}
 if(b.classList.contains('next')){if(has(st)){st++;render(1)}}else if(b.classList.contains('back')){st--;render(1)}});
 render(0);})();</script>
-</body>
+<script>(function(){try{if(!localStorage.getItem("gotrue.user"))return}catch(e){return}var a=document.createElement("a");a.href="/admin/";a.className="adm-btn";a.textContent="ניהול האתר";document.body.appendChild(a)})();</script></body>
 </html>

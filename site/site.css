@@ -878,3 +878,6 @@ html body .qz-inline .qz-send{font-size:.95rem;padding:.75rem}
 html body .qz-inline .qz-note{font-size:.82rem}
 @media (min-width:601px){html body .qz-inline .qz-opts{grid-template-columns:repeat(2,1fr)}}html body .qz-inline .qz-opts button{padding:.55rem .8rem!important;font-size:.9rem!important}
 html body .qz-inline h3{font-family:var(--display)!important;font-weight:700;font-size:clamp(1.35rem,2vw,1.7rem)!important;line-height:1}
+/* כפתור ניהול – רק למי שמחובר לפאנל */
+.adm-btn{position:fixed;top:50%;left:0;transform:translateY(-50%);z-index:70;background:#2A1D14;color:#FAF5EE;text-decoration:none;font-weight:700;font-size:.85rem;padding:.7rem .55rem;border-radius:0 12px 12px 0;writing-mode:vertical-rl;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.adm-btn:hover{background:#4A2C1C}
