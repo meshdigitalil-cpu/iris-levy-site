@@ -288,3 +288,8 @@ for (const f of walk(DIST)) {
 }
 
 console.log(`build ok: ${arts.length} מאמרים, ${revs.length} המלצות, ${bas.length} לפני/אחרי, ${textEdits.length} שינויי טקסט, ${touched} עמודים עודכנו`);
+
+// עותק תצוגה (לא האתר הראשי): לא להופיע בגוגל
+if (process.env.CONTEXT && process.env.CONTEXT !== 'production') {
+  fs.writeFileSync(path.join(DIST, '_headers'), '/*\n  X-Robots-Tag: noindex, nofollow\n');
+}
