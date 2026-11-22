@@ -14,7 +14,7 @@ page_title: יש לך אקנה בגב? מהו הטיפול שניתן לך מא�
 description: סובל/ת מאקנה על הגב, עם נטייה להתפשט גם לאזור הישבן? נמאס להסתיר
   בקיץ? והפצעים הכואבים, הצלקות והסימנים, שנראים בעיקר בשמש... יש
 ---
-[](BBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ8yMDcyODEzOTMwajBqMTWoAgiwAgE&sourceid=chrome&source=chrome.rb&ie=UTF-8)את/ה סובל/ת מאקנה על הגב? עם נטייה להתפשט ולגלוש גם לאיזור הישבן שלך?
+[ ](https://www.iris-levy.co.il/admin/#/collections/articles/entries/back1)[](BBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ8yMDcyODEzOTMwajBqMTWoAgiwAgE&sourceid=chrome&source=chrome.rb&ie=UTF-8)את/ה סובל/ת מאקנה על הגב? עם נטייה להתפשט ולגלוש גם לאיזור הישבן שלך?
 
 ובקיץ, נמאס לך למרוח מייקאפ ולהסתיר עם השער? או ללבוש בגד -ים עם חולצה שמכסה את הגב?
 
@@ -36,7 +36,7 @@ description: סובל/ת מאקנה על הגב, עם נטייה להתפשט ג
 
 * ### **רוצה לממש את החלום שלך ולהתעורר עם גב נקי חלק למשעי, עם חיוך קורן על הבוקר?** **וזה אפשרי**!
 
-**סקפטי/ת לא מאמינ/ה**? כל מה שעלייך/עליך לעשות, הוא לגלוש באתר הבית שלי ולהתרשם **[מעשרות הממליצים](https://www.iris-levy.co.il/admin/#/collections/articles)** של לקוחות מרוצים ומרוצות...
+**סקפטי/ת לא מאמינ/ה**? כל מה שעלייך/עליך לעשות, הוא לגלוש באתר הבית שלי ולהתרשם **[מעשרות הממליצים](< https://www.iris-levy.co.il/admin/#/collections/articles/entries/back1>)** של לקוחות מרוצים ומרוצות...
 
 ### **ולהיווכח, שעם סבלנות והתמדה ניתן להגיע לשיפור ניכר באקנה, פצעי האקנה גם על הגב שלך.**
 
