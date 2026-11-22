@@ -14,7 +14,7 @@ page_title: יש לך אקנה בגב? מהו הטיפול שניתן לך מא�
 description: סובל/ת מאקנה על הגב, עם נטייה להתפשט גם לאזור הישבן? נמאס להסתיר
   בקיץ? והפצעים הכואבים, הצלקות והסימנים, שנראים בעיקר בשמש... יש
 ---
-[ ](https://www.iris-levy.co.il/admin/#/collections/articles/entries/back1)[](BBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ8yMDcyODEzOTMwajBqMTWoAgiwAgE&sourceid=chrome&source=chrome.rb&ie=UTF-8)את/ה סובל/ת מאקנה על הגב? עם נטייה להתפשט ולגלוש גם לאיזור הישבן שלך?
+## [ ](https://www.iris-levy.co.il/admin/#/collections/articles/entries/back1)[](BBFGDsYwgMyCQgFEEUYOxjCAzIJCAYQRRg7GMIDMgkIBxBFGDsYwgPSAQ8yMDcyODEzOTMwajBqMTWoAgiwAgE&sourceid=chrome&source=chrome.rb&ie=UTF-8)את/ה סובל/ת מאקנה על הגב? עם נטייה להתפשט ולגלוש גם לאיזור הישבן שלך?
 
 ובקיץ, נמאס לך למרוח מייקאפ ולהסתיר עם השער? או ללבוש בגד -ים עם חולצה שמכסה את הגב?
 
@@ -44,12 +44,14 @@ description: סובל/ת מאקנה על הגב, עם נטייה להתפשט ג
 
 * ### אז שלא יעבדו עליכן/ם!
 
-### רוצים לדעת, מה באמת עובד? עבודת שורש אמיתית?
+### את/ה רוצה לדעת, מה באמת עובד? עבודת שורש אמיתית?
 
-ידוע, היום כמעט ואין קוסמטיקאיות המשלבות ניקוי ניקוז ידני עמוק על הגב שלך, ולא רק על הגב, **לצערי.**
+* ### המשכ/י לקרוא...
+
+ידוע, היום, **לצערי,** כמעט ואין קוסמטיקאיות המשלבות ניקוי ניקוז ידני עמוק על הגב שלך, ולא רק על הגב, **לצערי.**
 
 * ### רוצה לדעת מדוע?
-* ### המשכ/י לקרוא...
+* ### **המשכ/י לקרוא..**.
 
 כי זו עבודה סיזיפית שדורשת מיומנות גבוהה סבלנות והתמדה.
 
