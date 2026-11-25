@@ -116,6 +116,8 @@ function renderBody(a) {
   let html = marked.parse(md);
   // הדגשות שה-Markdown לא זיהה (בעברית ליד פיסוק)
   html = html.replace(/\*\*([^\n]+?)\*\*/g, '<strong>$1</strong>');
+  // קישורים שהוכנסו בפאנל עם רווח לפני הכתובת
+  html = html.replace(/href="(?:%20|\s)+/g, 'href="');
   html = html.replace(/<p><!--QUIZ:(.*?)--><\/p>|<!--QUIZ:(.*?)-->/g, (m, a1, a2) => QUIZ(a1 || a2));
   // כותרות h3+ -> h2 כדי לשמור על העיצוב
   const heads = [];
