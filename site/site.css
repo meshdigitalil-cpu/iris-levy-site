@@ -766,3 +766,118 @@ blockquote,.quote,.tq{font-size:1.5rem!important;line-height:1.3!important}
 /* המלצה קופצת – גרסה קטנה יותר */
 @media (min-width:601px){.rpop{width:270px;padding:.85rem .95rem .75rem;border-radius:16px}.rpop::before{font-size:.72rem;top:-.75rem}.rpop .rp-h{font-size:.9rem;margin-top:.1rem}.rpop .rp-t{font-size:.86rem;line-height:1.45}.rpop .rp-a{font-size:.78rem;margin-top:.3rem}.rpop .rp-x{width:26px;height:26px}}
 @media (max-width:600px){.rpop{padding:.65rem .75rem .6rem;width:calc(100% - 8rem)}.rpop .rp-h{font-size:.85rem}.rpop .rp-t{font-size:.82rem;line-height:1.4}.rpop .rp-a{font-size:.75rem;margin-top:.25rem}.rpop .rp-x{width:26px;height:26px}}
+
+/* כרטיסי "מה מטריד אותך" – תמונה + הסבר */
+.rcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-items:start}
+.rcx{background:var(--surface,#fff);border:1px solid var(--line,rgba(42,29,20,.12));border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.rcx-img{display:block;aspect-ratio:16/10;overflow:hidden}
+.rcx-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.rcx:hover .rcx-img img{transform:scale(1.04)}
+.rcx-b{padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.55rem;position:relative}
+.rcx-n{position:absolute;top:-1.3rem;left:1.1rem;width:2.6rem;height:2.6rem;border-radius:50%;background:#E8833A;color:#2A1D14;display:grid;place-items:center;font-weight:700;font-size:.9rem;box-shadow:0 4px 12px rgba(42,29,20,.15)}
+.rcx h3{font-size:1.35rem;line-height:1.15;margin:0}
+.rcx h3 a{color:inherit;text-decoration:none}
+.rcx-p{margin:0;font-size:.95rem;line-height:1.55;opacity:.85}
+.rc-list{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.92rem;line-height:1.5}
+.rc-list b{color:#C9631F}
+.rc-foot{margin:.2rem 0 0;padding-top:.6rem;border-top:1px dashed var(--line,rgba(42,29,20,.2));font-size:.92rem}
+.rcx-more{align-self:flex-start;font-weight:600;color:#C9631F;text-decoration:none;font-size:.92rem}
+.rcx-more:hover{text-decoration:underline}
+.meet-img video{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:32px;display:block;background:#2A1D14}
+
+/* כפתורי שיחה ו-WhatsApp קבועים */
+.fabs{position:fixed;left:1rem;bottom:calc(1rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:.6rem;transition:bottom .3s}
+.fab{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.25rem .75rem 1rem;border-radius:999px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;box-shadow:0 10px 26px rgba(0,0,0,.22);white-space:nowrap}
+.fab svg{width:22px;height:22px;flex:none}
+.fab-tel{background:#E8833A;color:#2A1D14}
+.fab-wa{background:#1E8E4E}
+.fab:hover{filter:brightness(1.07)}
+html body .rpop{bottom:calc(8.4rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px))}
+@media (max-width:600px){
+  .fabs{flex-direction:row;left:.6rem;right:.6rem;bottom:calc(.6rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px));gap:.5rem}
+  .fab{flex:1;justify-content:center;padding:.65rem .6rem;font-size:.9rem;gap:.4rem}
+  .fab svg{width:18px;height:18px}
+  html body .bot-btn{bottom:calc(4.4rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px))!important}
+  html body .rpop{bottom:calc(8rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:3.6rem}
+}
+/* משפט מחץ בתמונה הראשית */
+.hero-punch{font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:600;line-height:1.45;margin:.4rem 0 .8rem;max-width:34rem}
+/* כפתור "לתיאום ייעוץ" – חום כהה */
+.pill.pill-dk{background:#4A2C1C!important;color:#fff!important;border-color:#4A2C1C!important}
+.pill.pill-dk:hover{background:#5E3A26!important}
+/* תמונה של איריס בצד הסרטון הראשי */
+.hero-side{display:flex;flex-direction:row;align-items:flex-end;gap:1rem;align-self:end}
+.hero-pic{margin:0;width:clamp(160px,15vw,210px);aspect-ratio:4/5;border-radius:24px;overflow:hidden;border:3px solid rgba(250,245,238,.85);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.hero-pic img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:820px){.hero-pic{display:none}}
+/* הקטנה: המלצות קופצות וכפתורי שיחה/WhatsApp */
+@media (min-width:601px){
+  html body .rpop{width:230px;padding:.7rem .8rem .65rem}
+  html body .rpop .rp-h{font-size:.82rem}
+  html body .rpop .rp-t{font-size:.78rem;line-height:1.4}
+  html body .rpop .rp-a{font-size:.72rem}
+  html body .rpop .rp-x{width:22px;height:22px}
+  html body .rpop{bottom:calc(7rem + var(--ckh,0px) + env(safe-area-inset-bottom,0px))}
+  .fab{padding:.55rem .95rem .55rem .8rem;font-size:.88rem;gap:.45rem}
+  .fab svg{width:18px;height:18px}
+  .fabs{gap:.45rem}
+}
+/* כרטיסי טיפולים – קטנים יותר, 4 בשורה */
+.rcards{grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1100px){.rcards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.rcards{grid-template-columns:1fr}}
+.rcx{border-radius:18px}
+.rcx-img{aspect-ratio:16/9}
+.rcx-b{padding:.9rem .95rem 1rem;gap:.45rem}
+.rcx-n{width:2.2rem;height:2.2rem;font-size:.8rem;top:-1.1rem;left:.9rem}
+.rcx h3{font-size:1.12rem}
+.rcx-p,.rc-list{font-size:.84rem;line-height:1.45}
+.rc-list{gap:.35rem}
+.rc-foot,.rcx-more{font-size:.84rem}
+/* כותרת ראשית בשורה אחת */
+html body .hero-low h1{font-size:clamp(1.9rem,3.6vw,3.3rem);white-space:nowrap;line-height:1.05}
+@media (max-width:600px){html body .hero-low h1{white-space:normal;font-size:clamp(1.7rem,8vw,2.4rem)}}
+html body .hero-low{grid-template-columns:minmax(0,46rem) auto}
+html body .hero-low h1{font-size:clamp(1.9rem,3.2vw,3rem)}
+.rcards .rcx .rcx-p,.rcards .rcx .rc-list{font-size:.84rem;line-height:1.45}
+@media (max-width:820px){html body .hero-low{grid-template-columns:1fr}}
+html body .hero-side .exp{min-width:7rem;padding:.7rem 1rem;border-radius:18px}
+html body .hero-side .exp b{font-size:clamp(2rem,3vw,2.6rem)}
+html body .hero-side .exp>span{font-size:.8rem}
+html body #treat .rcx p.rcx-p{font-size:.84rem;line-height:1.45;max-width:none}
+html body #treat .rcx p.rc-p{font-size:.84rem;line-height:1.45;max-width:none;margin:0;opacity:.85}
+html body .pill-wa,html body .ic-wa{background:#1E8E4E!important}
+/* סרטון ראשי קטן יותר */
+@media (min-width:821px){
+  html body .hero-card{min-height:min(72vh,660px)}
+  html body .wordmark{font-size:clamp(5rem,14vw,12rem);margin-bottom:.8rem}
+  html body .hero-pic{width:clamp(140px,12vw,180px)}
+}
+html body .hero-side .exp{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+html body .hero-side .exp b{display:flex;justify-content:center;align-items:baseline;width:100%;direction:ltr;line-height:1}
+@media (min-width:821px){html body .hero-side{margin-bottom:2.2rem}}
+html body #treat .rcx h3{font-size:clamp(1.45rem,1.9vw,1.8rem);line-height:1.05}
+@media (min-width:821px){html body .hero-pic{width:clamp(170px,15vw,230px)}}
+html body .hero-side .exp{min-width:0;width:auto;padding:.6rem 1.1rem .7rem;gap:.15rem}html body .hero-side .exp b{font-size:clamp(2.4rem,3.4vw,3rem)}html body .hero-side .exp>span{font-size:.9rem;white-space:nowrap}
+html body .hero-side .exp b{transform:translateX(4px)}
+/* שאלון – קטן יותר */
+html body .qz-inline{padding:1.1rem 1.1rem 1rem;border-radius:22px;margin:1.6rem 0;max-width:620px}
+html body .qz-inline h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+html body .qz-inline p{font-size:.92rem}
+html body .qz-inline h3{font-size:1.1rem;margin-bottom:.6rem}
+html body .qz-inline .qz-kick{font-size:.78rem;margin-bottom:.5rem}
+html body .qz-inline .qz-dots{margin-bottom:.7rem}
+html body .qz-inline .qz-dots i{width:22px;height:4px}
+html body .qz-inline .qz-opts{gap:.4rem}
+html body .qz-inline .qz-opts button{font-size:.92rem;padding:.6rem .85rem;border-radius:12px}
+html body .qz-inline .qz-nav{margin-top:.8rem}
+html body .qz-inline .qz-nav .next{padding:.6rem 1.2rem;font-size:.92rem}
+html body .qz-inline .qz-age input{font-size:1.05rem;padding:.6rem .85rem;border-radius:12px}
+html body .qz-inline .qz-send{font-size:.95rem;padding:.75rem}
+html body .qz-inline .qz-note{font-size:.82rem}
+@media (min-width:601px){html body .qz-inline .qz-opts{grid-template-columns:repeat(2,1fr)}}html body .qz-inline .qz-opts button{padding:.55rem .8rem!important;font-size:.9rem!important}
+html body .qz-inline h3{font-family:var(--display)!important;font-weight:700;font-size:clamp(1.35rem,2vw,1.7rem)!important;line-height:1}
+/* כפתור ניהול – רק למי שמחובר לפאנל */
+.adm-btn{position:fixed;top:50%;left:0;transform:translateY(-50%);z-index:70;background:#2A1D14;color:#FAF5EE;text-decoration:none;font-weight:700;font-size:.85rem;padding:.7rem .55rem;border-radius:0 12px 12px 0;writing-mode:vertical-rl;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.adm-btn:hover{background:#4A2C1C}
